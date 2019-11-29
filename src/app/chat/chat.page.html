@@ -10,34 +10,40 @@
   </ion-toolbar>
 </ion-header>
 
-<div class="mine messages">
-  <div class="message">
-    Dude
-  </div>
-</div>
-<div class="yours messages">
-  <div class="message">
-    Hey!
-  </div>
-  <div class="message">
-    You there?
-  </div>
-  <div class="message">
-    Hello, how's it going?
-  </div>
-</div>
-<div class="mine messages">
-  <div class="message">
-    Great thanks!
-  </div>
-  <div class="message">
-    How about you?
-  </div>
-</div>
+<ion-content #content>
+  <ion-grid>
+    <ion-row *ngFor="let message of messages">
+
+      <ion-col size="9" *ngIf="currentUser !== message.user" class="message notUser">
+        <b> {{ message.user }} </b>
+        <span> {{ message.msg }} </span>
+      </ion-col>
+
+      <ion-col offset="3" size="9" *ngIf="currentUser === message.user" class="message user">
+        <b> {{ message.user }} </b>
+        <span> {{ message.msg }} </span>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
 
 <ion-footer>
-  <ion-item>
-    <ion-icon name="add" slot="start"></ion-icon>
-    <ion-input placeholder="Enter Your Message" color="quater" slot="start"></ion-input>
-  </ion-item>
+  <ion-toolbar>
+    <ion-row class="ion-align-items-center ion-no-padding">
+      <!--<ion-col slot="start">
+        <ion-button (click)="AddMedia">
+          <ion-icon name="add" slot="start"></ion-icon>
+        </ion-button>
+      </ion-col>-->
+      <ion-col size="10">
+        <textarea placeholder="Type Your Message" color="black" autosize maxRows="4" [(ngModel)]="userMSG" class="message-input"></textarea>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button expand="block" fill="clear" (click)="sendMessage()" class="send-button">
+          <ion-icon name="send"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-footer>
