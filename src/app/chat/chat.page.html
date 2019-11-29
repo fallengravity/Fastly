@@ -1,0 +1,75 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-avatar slot="end" style="height: 40px; width: 40px; margin-right: 25px;">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    <ion-title>Username 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="mine messages">
+  <div class="message last">
+    Dude
+  </div>
+</div>
+<div class="yours messages">
+  <div class="message">
+    Hey!
+  </div>
+  <div class="message">
+    You there?
+  </div>
+  <div class="message last">
+    Hello, how's it going?
+  </div>
+</div>
+<div class="mine messages">
+  <div class="message">
+    Great thanks!
+  </div>
+  <div class="message last">
+    How about you?
+  </div>
+</div>
+
+<ion-footer>
+  <ion-item>
+    <ion-icon name="add" slot="start"></ion-icon>
+    <ion-input placeholder="Enter Your Message" color="quater" slot="start"></ion-input>
+  </ion-item>
+</ion-footer>
+
+<script>
+  const controller = document.querySelector('ion-action-sheet-controller');
+  const button = document.querySelector('ion-button');
+  button.addEventListener('click', handleButtonClick);
+
+  function handleButtonClick() {
+    controller.create({
+      header: 'Albums',
+      buttons: [{
+          text: 'Delete',
+          role: 'destructive'
+        },
+        {
+          text: 'Share'
+        },
+        {
+          text: 'Play'
+        },
+        {
+          text: 'Favorite'
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel'
+        }
+      ]
+    }).then(actionSheet => {
+      actionSheet.present();
+    });
+  }
+</script>
