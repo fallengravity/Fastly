@@ -15,6 +15,17 @@
       </ion-label>
     </ion-item-divider>
 
+    <ion-toolbar>
+      <ion-row class="ion-align-items-center ion-no-padding">
+        <ion-col size="8">
+          <ion-input autosize type="text" [(ngModel)]="nickname" placeholder="Nickname"></ion-input>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button expand="block" fill="clear" color="primary" (click)="joinChat()" [disabled]="nickname === ''">Enter</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-toolbar>
+
     <ion-item>
       <ion-icon name="finger-print" slot="start"></ion-icon>
       <ion-label>
