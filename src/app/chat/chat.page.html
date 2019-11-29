@@ -4,9 +4,11 @@
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
     <ion-avatar slot="end" style="height: 40px; width: 40px; margin-right: 25px;">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <img src="https://ether1.org/images/dylie.jpg">
     </ion-avatar>
-    <ion-title>Username 1</ion-title>
+    <ion-title>
+      <span>{{ otherUser }}</span>
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,12 +17,10 @@
     <ion-row *ngFor="let message of messages">
 
       <ion-col size="9" *ngIf="currentUser !== message.user" class="message notUser">
-        <b> {{ message.user }} </b>
         <span> {{ message.msg }} </span>
       </ion-col>
 
-      <ion-col offset="3" size="9" *ngIf="currentUser === message.user" class="message user">
-        <b> {{ message.user }} </b>
+      <ion-col size="auto" *ngIf="currentUser === message.user" class="message user">
         <span> {{ message.msg }} </span>
       </ion-col>
 

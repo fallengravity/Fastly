@@ -28,9 +28,10 @@ export class ChatPage {
   ];
 
   currentUser = 'fallen';
+  otherUser = 'Dylie';
   userMSG = '';
 
-  @ViewChild('content', {static: true}) private content: any;
+  @ViewChild('content', { static: true }) private content: any;
 
   constructor() { }
 
