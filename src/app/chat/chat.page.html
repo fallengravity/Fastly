@@ -11,7 +11,7 @@
 </ion-header>
 
 <div class="mine messages">
-  <div class="message last">
+  <div class="message">
     Dude
   </div>
 </div>
@@ -22,7 +22,7 @@
   <div class="message">
     You there?
   </div>
-  <div class="message last">
+  <div class="message">
     Hello, how's it going?
   </div>
 </div>
@@ -30,7 +30,7 @@
   <div class="message">
     Great thanks!
   </div>
-  <div class="message last">
+  <div class="message">
     How about you?
   </div>
 </div>
@@ -41,35 +41,3 @@
     <ion-input placeholder="Enter Your Message" color="quater" slot="start"></ion-input>
   </ion-item>
 </ion-footer>
-
-<script>
-  const controller = document.querySelector('ion-action-sheet-controller');
-  const button = document.querySelector('ion-button');
-  button.addEventListener('click', handleButtonClick);
-
-  function handleButtonClick() {
-    controller.create({
-      header: 'Albums',
-      buttons: [{
-          text: 'Delete',
-          role: 'destructive'
-        },
-        {
-          text: 'Share'
-        },
-        {
-          text: 'Play'
-        },
-        {
-          text: 'Favorite'
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel'
-        }
-      ]
-    }).then(actionSheet => {
-      actionSheet.present();
-    });
-  }
-</script>
