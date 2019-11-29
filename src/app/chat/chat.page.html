@@ -7,7 +7,7 @@
       <img src="https://ether1.org/images/dylie.jpg">
     </ion-avatar>
     <ion-title>
-      <span>{{ otherUser }}</span>
+      <span>{{ currentUser }}</span>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -31,16 +31,11 @@
 <ion-footer>
   <ion-toolbar>
     <ion-row class="ion-align-items-center ion-no-padding">
-      <!--<ion-col slot="start">
-        <ion-button (click)="AddMedia">
-          <ion-icon name="add" slot="start"></ion-icon>
-        </ion-button>
-      </ion-col>-->
       <ion-col size="10">
-        <textarea placeholder="Type Your Message" color="black" autosize maxRows="4" [(ngModel)]="userMSG" class="message-input"></textarea>
+        <textarea placeholder="Type Your Message" color="black" autosize maxRows="4" [(ngModel)]="message" class="message-input"></textarea>
       </ion-col>
       <ion-col size="2">
-        <ion-button expand="block" fill="clear" (click)="sendMessage()" class="send-button">
+        <ion-button expand="block" fill="clear" (click)="sendMessage()" [disabled]="message === ''" class="send-button">
           <ion-icon name="send"></ion-icon>
         </ion-button>
       </ion-col>
