@@ -66,6 +66,7 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
   --ion-color-quater: #000;
+  --ion-color-textinput: #fff;
 }
 // Dark Theme
 
@@ -128,6 +129,7 @@ body.dark {
   --color-toolbar-background: black;
   --color-toolbar-text: white;
   --ion-color-quater: #fff;
+  --ion-color-textinput: #000;
 }
 // iOS Dark Theme
 
@@ -161,6 +163,7 @@ body.dark {
   --color-toolbar-background: black;
   --color-toolbar-text: white;
   --ion-color-quater: #fff;
+  --ion-color-textinput: #000;
 }
 
 .md body.dark {
@@ -192,4 +195,7 @@ body.dark {
   --color-toolbar-background: black;
   --color-toolbar-text: white;
   --ion-color-quater: #fff;
+  --ion-color-textinput: #000;
 }
+$text-input-highlight-color-valid: transparent;
+$text-input-highlight-color-invalid: transparent;

@@ -8,6 +8,9 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./chat.page.scss'],
 })
 export class ChatPage implements OnInit {
+  onKeydown(event) {
+    event.preventDefault();
+  }
   message = '';
   messages = [];
   currentUser = '';
