@@ -30,7 +30,7 @@ export class ChatPage implements OnInit {
       if (data['event'] === 'left') {
         this.showToast('User left: ' + user);
       } else {
-        this.showToast('User joined: ' + user);
+        this.showToast(user + ' has joined');
       }
     });
 
@@ -51,8 +51,10 @@ export class ChatPage implements OnInit {
   async showToast(msg) {
     let toast = await this.toastCtrl.create({
       message: msg,
+      color: 'primary',
       position: 'top',
-      duration: 2000
+      duration: 2000,
+      showCloseButton: true
     });
     toast.present();
   }
