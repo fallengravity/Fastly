@@ -1,19 +1,56 @@
 <ion-header translucent>
   <ion-toolbar>
-    <ion-buttons slot="end">
-      <ion-icon name="add" expand="block" style="font-size: 23px; font-weight: 500; padding-top: 4px; padding-right: 10px;"></ion-icon>
+
+    <ion-title>Chats</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="openModal()">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
     </ion-buttons>
-    <ion-title>
-      <span>Chats</span>
-    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!--<ion-card><ion-searchbar animated></ion-searchbar></ion-card>-->
-  <ion-list>
+
+  <!-- We Need to find a more suitable way to implement this
+  <ion-card>
+   <ion-searchbar animated></ion-searchbar>
+  </ion-card>-->
+
+  <ion-list style="background-color: #121212;">
 
     <ion-item no-lines routerLink="/chat" routerDirection="root">
+      <ion-avatar slot="start">
+        <img src="https://ether1.org/images/fallen.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{otherUser}}</h2>
+        <h3 color="quater">Last Message Appears here</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item no-lines routerLink="/chat" routerDirection="root">
+      <ion-avatar slot="start">
+        <img src="https://ether1.org/images/fallen.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{otherUser}}</h2>
+        <h3 color="quater">Last Message Appears here</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item no-lines routerLink="/chat" routerDirection="root">
+      <ion-avatar slot="start">
+        <img src="https://ether1.org/images/fallen.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{otherUser}}</h2>
+        <h3 color="quater">Last Message Appears here</h3>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none" routerLink="/chat" routerDirection="root">
       <ion-avatar slot="start">
         <img src="https://ether1.org/images/fallen.png">
       </ion-avatar>

@@ -1,0 +1,18 @@
+<ion-header translucent>
+  <ion-toolbar>
+
+    <ion-title>{{modalTitle}}</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="closeModal()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-toolbar>
+    <ion-searchbar mode="ios" placeholder="Search for contact"></ion-searchbar>
+  </ion-toolbar>
+</ion-content>

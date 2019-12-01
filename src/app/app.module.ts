@@ -10,12 +10,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { MainModalPageModule } from './main-modal/main-modal.module';
+
 const config: SocketIoConfig = { url: 'https://socket.xerom.org', options: {} };
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, SocketIoModule.forRoot(config)],
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot(),
+    AppRoutingModule,
+    SocketIoModule.forRoot(config),
+    MainModalPageModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
